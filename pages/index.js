@@ -1,5 +1,6 @@
 import useSWR from 'swr'
 import DataRow from '../components/data-row'
+import Link from 'next/link'
 
 const fetcher = (url) => fetch(url).then((r) => r.json())
 
@@ -12,6 +13,9 @@ export default function Home() {
     <div className='max-w-lg flex flex-col font-mono mx-auto'>
       <p className='font-mono text-4xl'>Next Fauna CRUD</p>
       <h2>Customer Data</h2>
+      <Link href='/customers/create'>
+        <a className='bg-green-100'>Create new customer</a>
+      </Link>
       <table className='table-fixed border-4'>
         
         <thead>
